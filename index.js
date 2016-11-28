@@ -46,10 +46,11 @@ var phoneNumbers = [];
 app.get('/sms/reply', function(request, response) {
 	response.set('Content-Type', 'text/plain');
 	console.log("request", request.from);
-	phoneNumbers.from.push(request.from);
+	phoneNumbers.push(request.from);
 	response.send(prayerTimes);
 });
 
+// 9092537868
 app.get('/sms/test', function(request, response) {
 	twilioClient.messages.create({ 
 	    to: '+17146565566', 
