@@ -47,7 +47,7 @@ app.get('/sms/reply', function(request, response) {
 	response.set('Content-Type', 'text/plain');
 	console.log("request", request.from);
 	phoneNumbers.push(request.from);
-	response.send(prayerTimes);
+	response.send(compiledTemplate(prayerTimes));
 });
 
 // 9092537868
@@ -70,7 +70,7 @@ twilioClient.messages.create({
     console.log(message.sid); 
 });
 
-var responseTemplateString = "ISOC Prayer Times (Iqama):\n" +
+var responseTemplateString = "IOk Prayer Times (Iqama):\n" +
 						"Fajr: 	 <%= fajr %>\n" +
 						"Dhur: 	 <%= dhur %>\n" +
 						"Asr: 	 <%= asr %>\n" +
