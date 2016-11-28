@@ -1,0 +1,31 @@
+{
+  "name": "prayer_time_sms",
+  "version": "1.0.0",
+  "description": "A service to allow people to be notified when prayer times (iqama) change at a masjid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbhakhra/PrayerTimeSms.git"
+  },
+  "keywords": [
+    "islam",
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Humza Bhakhrani @hbahakhra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hbhakhra/PrayerTimeSms/issues"
+  },
+  "homepage": "https://github.com/hbhakhra/PrayerTimeSms#readme",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "firebase": "^3.6.1"
+  }
+}
