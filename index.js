@@ -41,7 +41,7 @@ app.get('/firebase', function(request, response) {
 });
 
 app.get('/sms/reply', function(request, response) {
-	res.set('Content-Type', 'text/plain');
+	response.set('Content-Type', 'text/plain');
 	console.log("request", request.query);
 	response.send('Sms received: ' + Date.now());
 });
@@ -54,4 +54,5 @@ app.get('/sms/test', function(request, response) {
 	}, function(err, message) { 
 	    console.log(message.sid); 
 	});
+	response.send("SMS Sent");
 })
