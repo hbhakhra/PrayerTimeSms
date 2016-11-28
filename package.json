@@ -27,6 +27,7 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "firebase": "^3.6.1",
-    "twilio": "^2.11.1"
+    "twilio": "^2.11.1",
+    "underscore": "^1.8.3"
   }
 }

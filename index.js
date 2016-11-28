@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages\index');
+  response.render('public/index');
 });
 
 app.listen(app.get('port'), function() {
@@ -56,3 +56,19 @@ app.get('/sms/test', function(request, response) {
 	});
 	response.send("SMS Sent");
 })
+
+twilioClient.messages.create({ 
+    to: '+17146565566', 
+    from: config.twilio.TWILIO_PHONE_NUMBER, 
+    body: "App started", 
+}, function(err, message) { 
+    console.log(message.sid); 
+});
+
+var responseTemplateString = "ISOC Prayer Times (Iqama):\n" +
+						"Fajr: 	 <%= fajr %>\n" +
+						"Dhur: 	 <%= dhur %>\n" +
+						"Asr: 	 <%= asr %>\n" +
+						"Maghrib: <%= maghrib %>\n" +
+						"Isha: 	 <%= isha %>\n";
+var compiledTemplate = _.template(responseTemplateString);
