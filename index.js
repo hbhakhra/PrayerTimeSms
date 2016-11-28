@@ -40,8 +40,9 @@ app.get('/firebase', function(request, response) {
 	})
 });
 
-app.post('/sms/reply', function(request, response) {
-	console.log("request.body", request.body);
+app.get('/sms/reply', function(request, response) {
+	res.set('Content-Type', 'text/plain');
+	console.log("request", request.query);
 	response.send('Sms received: ' + Date.now());
 });
 
