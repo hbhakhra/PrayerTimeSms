@@ -24,4 +24,8 @@ app.listen(app.get('port'), function() {
 
 app.get('/cool', function(request, response) {
 	response.send(cool());
-})
+});
+
+app.get('/helloworld', function(request, response) {
+	response.send('hello world');
+});
