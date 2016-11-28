@@ -41,10 +41,13 @@ app.get('/firebase', function(request, response) {
 	})
 });
 
+var phoneNumbers = [];
+
 app.get('/sms/reply', function(request, response) {
 	response.set('Content-Type', 'text/plain');
-	console.log("request", request.query);
-	response.send('Sms received: ' + Date.now());
+	console.log("request", request.from);
+	phoneNumbers.from.push(request.from);
+	response.send(prayerTimes);
 });
 
 app.get('/sms/test', function(request, response) {
@@ -73,3 +76,11 @@ var responseTemplateString = "ISOC Prayer Times (Iqama):\n" +
 						"Maghrib: <%= maghrib %>\n" +
 						"Isha: 	 <%= isha %>\n";
 var compiledTemplate = _.template(responseTemplateString);
+
+var prayerTimes = {
+	"fajr": "5:45 AM",
+	"dhur": "1:15 PM",
+	"asr": "3:45 PM",
+	"maghrib": "4:50 PM",
+	"isha": "7:30 PM"
+}
